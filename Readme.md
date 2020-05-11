@@ -1,7 +1,7 @@
 # Личный проект «Седона»
 
 * Студент: [Светлана Смирнова](https://up.htmlacademy.ru/htmlcss/28/user/1464741).
-* Наставник: [Никита Рогатнев](https://htmlacademy.ru/profile/nikita_rogatnev).
+* Наставник: [Никита 🧐 Рогатнев](https://htmlacademy.ru/profile/nikita_rogatnev).
 
 ---
 
