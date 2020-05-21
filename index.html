@@ -4,13 +4,14 @@
 <head class="head">
   <meta charset="utf-8">
   <title>HTML Academy: Седона</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
   <header class="header">
     <nav class="nav">
-      <div class="nav_style">
-        <ul class="nav_list">
+      <div class="nav-style">
+        <ul class="nav-list">
           <li><a href="#">Информация</a></li>
           <li><a href="#">Фото и видео</a></li>
           <li><a href="#">Карта штата</a></li>
@@ -25,80 +26,72 @@
     </nav>
   </header>
   <main class="main">
-    <img src="img/background photo.jpg" width="1200px" height="509px" alt="Добро пожаловать в Седону">
+    <img src="img/background photo.jpg" width="1200" height="509" alt="Добро пожаловать в Седону">
     <img src="img/welcome.svg" width="457" height="360" alt="Логотип SEDONA">
     <img src="img/white.svg" width="1200" height="57" alt="">
     <!--это я еще не знаю как совмещать-->
-    <section class="section_1">
+    <section class="intro">
       <h1 class="title">Седонам - небольшой городок в Аризоне, заслуслуживающий большего!</h1>
       <p>Рассмотрим 5 причин, по которым Седона круче, чем гранд каньон!</p>
     </section>
-    <section class="section_2">
-      <div class="title_white">
-        <!-- я не понимаю пока, через какой тег делать белый цвет текста, через section или div -->
-        <h2 class="h2">Настоящий городок</h2>
-        <span class="number">— №1 —</span>
+
+    <section class="advantages">
+      <div class="advantages-item">
+        <h2 class="advantages-title">Настоящий городок</h2>
+        <span class="advantages-number">— №1 —</span>
         <p>Седона - не аттракцион для туристов, там течёт своя жизнь</p>
       </div>
-      <div class="image_page">
-        <img src="img/image1.jpg" width="800px" height="256px" alt="Колоритные улицы">
-      </div>
+      <div class="advantages-image">
+        <img src="img/image1.jpg" width="800" height="256" alt="Колоритные улицы">
       </div>
     </section>
-    <section class="section_3">
-      <div class="icon">
-        <img src="img/icon-1.svg" alt="">
-      </div>
-      <div class="title_black">
-        <h2 class="h2">Жильё</h2>
+    <section class="features">
+      <div class="features-item">
+        <h2 class="features-title">Жильё</h2>
         <p>Рекомендуем пожить в настоящем мотеле, всё как в кино!</p>
       </div>
-      <div class="icon">
-        <img src="img/icon-2.svg" alt="">
-      </div>
-      <div class="title_black">
-        <h2 class="h2">Еда</h2>
+      <div class="features-item">
+        <h2 class="features-title">Еда</h2>
         <p>Всегда заказывайте фирменный бургер, вы не разочаруетесь!</p>
       </div>
-      <div class="icon">
-        <img src="img/icon3.svg" alt="">
-      </div>
-      <div class="title_black">
-        <h2 class="h2">Сувениры</h2>
+      <div class="features-item">
+        <h2 class="features-title">Сувениры</h2>
         <p>Не только китайского, но и местного производства!</p>
       </div>
     </section>
-    <section class="section_4">
-      <div class="image_page">
-        <img src="img/image2.jpg" width="800px" height="256px" alt="Богатые пейзажи">
+
+    <section class="advantages">
+      <div class="advantages-image">
+        <img src="img/image2.jpg" width="800" height="256" alt="Богатые пейзажи">
       </div>
-      <div class="title_white">
-        <h2 class="h2">Там есть мост дьявола</h2>
-        <span class="number">— №2 —</span>
+      <div class="advantages-item">
+        <h2 class="advantages-title">Там есть мост дьявола</h2>
+        <span class="advantages-number">— №2 —</span>
         <p>Да, по нему можно пройти! если конечно вы осмелитесь</p>
       </div>
     </section>
-    <section class="section_5">
-      <div class="я_пока_не_придумала_зачем_тут_div">
-        <h2 class="h2">Небольшая площадь</h2>
-        <span class="number">— №3 —</span>
+    <section class="advantages">
+      <div class="advantages-item">
+        <h2 class="advantages-title">Небольшая площадь</h2>
+        <span class="advantages-number">— №3 —</span>
         <p>Все достопримечательности находятся очень близко</p>
       </div>
-      <div class="я_пока_не_придумала_зачем_тут_div">
-        <h2 class="h2">Красивая дорога</h2>
-        <span class="number">— №4 —</span>
+      <div class="advantages-item">
+        <h2 class="advantages-title">Красивая дорога</h2>
+        <span class="advantages-number">— №4 —</span>
         <p>Ехать в седону из лас-вегаса совсем не скучно!</p>
       </div>
-      <div class="я_пока_не_придумала_зачем_тут_div">
-        <h2 class="h2">Мало туристов</h2>
-        <span class="number">— №5 —</span>
+      <div class="advantages-item">
+        <h2 class="advantages-title">Мало туристов</h2>
+        <span class="advantages-number">— №5 —</span>
         <p>Большинство едет в гранд каньон и толпится там</p>
       </div>
     </section>
-    <section class="section_6">
-      <h2 class="h2_big">Заинтересовались?</h2>
+    <section class="intersted">
+      <h2 class="intersted-title">Заинтересовались?</h2>
       <p>Укажите предполагаемые даты поездки, и мы покажем вам лучшие предложения гостиниц в седоне</p>
     </section>
+    <!-- выпадающее окно -->
     <!-- интерактивная карта -->
   </main>
   <footer class="footer">
@@ -119,7 +112,7 @@
         </li>
       </ul>
     </div>
-    <div class="Website">
+    <div class="website">
       <p>Website by</p>
       <a href="https://htmlacademy.ru/intensive/htmlcss">
         <img src="img/html_academy.svg" alt="HTMLacademy">
