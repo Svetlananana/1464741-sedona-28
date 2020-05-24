@@ -91,8 +91,38 @@
       <h2 class="intersted-title">Заинтересовались?</h2>
       <p>Укажите предполагаемые даты поездки, и мы покажем вам лучшие предложения гостиниц в седоне</p>
     </section>
-    <!-- выпадающее окно -->
-    <!-- интерактивная карта -->
+    <div class="button-search">
+      <button type="button">Поиск гостиницы в Седоне</button>
+    </div>
+    <form action="https://echo.htmlacademy.ru/courses" method="GET">
+      <div class="hotel-search">
+        <fieldset class="form-search">
+          <div class="date-search">
+            <label>Дата заезда:
+              <input name="checkin-date" type="text" value="24 апреля 2017">
+            </label>
+            <!-- если поставить тип "дата", то формат меняется и атрибут value не работает. и иконку календарика вставлять через css, так?-->
+            <label>Дата выезда:
+              <input name="checkout-date" type="text" value="4 июля 2017">
+            </label>
+          </div>
+          <div class="number-search">
+            <label>Взрослые:
+              <input name="adult" type="number" min="1" max="100" value="2">
+            </label>
+            <label>Дети:
+              <input name="child" type="number" min="0" max="100" value="0">
+            </label>
+          </div>
+          <div class="button-search">
+            <button type="submit">Найти</button>
+          </div>
+      </fieldset>
+    </div>
+    </form>
+    <div class="map">
+      <img src="img/map.png" width="1199" height="594" alt="Карта с местоположением города Седона"><!--хочу интерактивную, если успею -->
+    </div>
   </main>
   <footer class="footer">
     <div class="contact">
@@ -118,6 +148,7 @@
         <img src="img/html-academy.svg" alt="HTMLacademy">
       </a>
     </div>
+    <!--<script type="text/javascript" src="script.js"></script> правильно?-->
   </footer>
 </body>
 

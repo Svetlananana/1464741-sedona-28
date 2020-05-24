@@ -26,7 +26,77 @@
   </header>
   <main class="main">
 
-    <!--<форма> class=""></форма> блок "Найдено: 3"-->
+    <form action="https://echo.htmlacademy.ru/courses" method="GET">
+      <div class="checkbox-infra">
+        <fieldset class="checkbox-comfort">
+          <legend>Инфраструктура:</legend>
+          <ul>
+            <li>
+              <label>
+                <input type="checkbox" name="infrastructure" value="pool" checked>Бассейн</label>
+            </li>
+            <li>
+              <label>
+                <input type="checkbox" name="infrastructure" value="parking">Парковка</label>
+            </li>
+            <li>
+              <label>
+                <input type="checkbox" name="infrastructure" value="internet" disabled>Wi-Fi</label>
+            </li>
+          </ul>
+        </fieldset>
+      </div>
+      <div class="checkbox-hotel">
+        <fieldset class="checkbox-comfort">
+          <legend>Тип жилья:</legend>
+          <ul>
+            <li>
+              <label>
+                <input type="checkbox" name="type-hotel" value="hotel" checked>Гостиница</label>
+            </li>
+            <li>
+              <label>
+                <input type="checkbox" name="type-hotel" value="motel" checked>Мотель</label>
+            </li>
+            <li>
+              <label>
+                <input type="checkbox" name="type-hotel" value="apartments" checked disabled>Аппартаменты</label>
+            </li>
+          </ul>
+        </fieldset>
+      </div>
+      <div class="parameters-cost">
+        <fieldset class="cost">
+          <legend>Стоимость в сутки (Р):</legend>
+          <div class="number-cost">
+            <label>От<input type="number" min="0" value="0" required></label>
+            <label>До<input type="number" max="3000" value="3000" required></label>
+          </div>
+          <input class="range-cost" type="range" min="0" max="3000">
+          <button class="button-cost" type="submit">Показать</button>
+        </fieldset>
+      </div>
+    </form>
+    <section class="sorting-search">
+      <h1 class="sorting-title">Найдено: 3</h1>
+      <p class="sorting">Сортировка:</p>
+      <ul>
+        <li>
+          <div class="sorting-cost"><a href="#">По цене</a>
+          </div>
+        </li>
+        <li><a href="#">По типу</a></li>
+        <li><a href="#">По рейтингу</a></li>
+      </ul>
+      <div class="cursor">
+        <button class="up" type="button">
+          <!--можно кнопки нарисовать через svg, но я пока не знаю как. если у тебя есть ссылка, буду благодарна-->
+        </button>
+        <button class="down" type="button">
+          <!---->
+        </button>
+      </div>
+    </section>
 
     <section class="hotels">
       <article class="hotels-item">
@@ -39,6 +109,7 @@
           <span>От 4000 p.</span>
           <a href="#">Подробнее</a>
           <a href="#">Забронировать</a>
+          <!--может лучше через button?-->
         </div>
         <div class="hotels-rating">
           <img src="img/star.svg" alt="рейтинг">
