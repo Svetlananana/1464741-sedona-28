@@ -1,0 +1,226 @@
+:root {
+  --basic-white: #ffffff;
+  --basic-blue: #81b3d2;
+  --basic-black: #000000;
+  --basic-brown: #766357;
+  --basic-gray: #888888;
+  --basic-light-grey: #e5e5e5;
+
+  --special-blue: #669ec0;
+  --special-dark-blue: #5496bd;
+  --special-brown: #604e43;
+  --special-dark-brown: #503e33;
+  --special-gray: #eeeeee;
+}
+
+body {
+  min-width: 1240px;
+  margin: 0;
+  padding: 0;
+  font-family: 'PT Sans', sans-serif;
+  font-size: 14px;
+  line-height: 21px;
+  font-weight: 400;
+  color: var(--basic-black);
+  text-transform: uppercase;
+  background-color: var(--basic-gray);
+  background-image: url('background-photo.jpg'); /* в моем случае это картинка велком ту седона?*/
+  background-position: top center;
+  background-repeat: no-repeat;
+  box-shadow: 0px 5px 15px rgba(0, 1, 1, 0.2);
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.header {
+  font-size: 14px;
+  line-height: 26px;
+  color: var(--basic-black);
+  background-color: var(--basic-white);
+}
+
+.nav-list {
+  list-style: none;
+}
+
+.logo {
+  position: absolute;
+  width: 138px;
+  height: 70px;
+  text-align: center;
+}
+
+/* main */
+
+.intro {
+  color: var(--basic-black);
+  background-color: var(--basic-white);
+}
+
+.title {
+  font-weight: bold;
+  font-size: 21px;
+  line-height: 26px;
+  text-align: center;
+}
+
+section p {
+  font-size: 14px;
+  line-height: 26px;
+  text-align: center;
+}
+/*.advantages {
+  чтот я не вразумлю зачем мне столько классов 
+}*/
+
+.advantages-item {
+  color: var(--basic-white);
+  background-color: var(--basic-blue);
+  text-align: center;
+}
+
+.advantages-title {
+  font-weight: bold;
+  font-size: 21px;
+  line-height: 21px;
+}
+
+/*.advantages-number {
+   ? 
+}*/
+
+.advantages-image {
+  background-color: var(--basic-gray);
+}
+
+.features {
+  color: var(--basic-black);
+  background-color: var(--basic-white);
+  background-image: url('icon-1.svg'); /* аларм! куда всавлять 3 иконки */
+  text-align: center;
+}
+
+/*.features-item {
+} */
+.features-title {
+  font-weight: bold;
+  font-size: 21px;
+  line-height: 21px;
+}
+
+/* не пойму, как в секции преимуществ под номерами 3, 4, 5 поменять цвет фона и шрифта? */
+
+.footer {
+  color: var(--basic-black);
+  background: rgba(255, 255, 255, 0.9);
+}
+
+footer a {
+  color: var(--basic-black);
+  text-decoration: underline;
+}
+
+.contact {
+  font-weight: bold;
+  font-size: 21px;
+  line-height: 26px;
+  text-align: left;
+}
+
+.social {
+  text-align: center;
+  /* нарисовать 2 квадрата! наложить иконки соц сетей на ссылки, пока незнаю как*/
+}
+
+.social a:hover {
+  background-color: var(--special-blue);
+}
+.social a:focus {
+  background-color: var(--special-dark-blue);
+}
+
+.website p {
+  font-size: 14px;
+  line-height: 26px;
+}
+
+.website a:hover {
+  background-color: var(--basic-blue);
+}
+
+.website a:focus {
+  color: rgba(0, 0, 0, 0.3);
+}
+
+/* hotels */
+
+.checkbox-background {
+  background-color: var(--basic-gray);
+  background-image: url('background-hotel.png');
+}
+
+.checkbox-comfort {
+  list-style: none;
+  color: var(--basic-white);
+  font-size: 14px;
+  line-height: 21px;
+}
+
+legend {
+  color: var(--basic-white);
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 21px;
+}
+
+/* .parameters-cost
+.cost
+.number-cost
+.range-cost
+.button-cost
+ здесь форма */
+
+.sorting-search {
+  background-color: var(--basic-white);
+  color: var(--basic-blac);
+  font-size: 12px;
+  line-height: 18px;
+}
+
+.sorting-title {
+  list-style: none;
+  color: var(--basic-black);
+  font-weight: bold;
+  font-size: 21px;
+  line-height: 26px;
+}
+
+.cursor {
+  list-style: none;
+}
+
+.hotels {
+  border-top: 1px var(--basic-light-grey);
+  border-bottom: 1px var(--basic-light-grey);
+}
+
+/*.hotels-item {} */
+
+.hotel-image {
+  border-color: var(--basic-gray);
+  padding: 30px;
+}
+
+/* .hotels-description {} */
+
+/* .hotels-rating {} */
+/* span */
+
+/* я запуталась=((( */
