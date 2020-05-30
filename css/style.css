@@ -14,7 +14,7 @@
 }
 
 body {
-  min-width: 1220px;
+  min-width: 1200px;
   margin: 0;
   padding: 0;
   font-family: 'PT Sans', Arial, sans-serif;
@@ -24,7 +24,6 @@ body {
   color: var(--basic-black);
   text-transform: uppercase;
   background-color: var(--basic-gray);
-  background-image: url('background-photo.jpg'); /* в моем случае это картинка велком ту седона?*/
   background-position: top center;
   background-repeat: no-repeat;
   box-shadow: 0px 5px 15px rgba(0, 1, 1, 0.2);
@@ -58,6 +57,11 @@ img {
 }
 
 /* main */
+.intro-photo {
+  background-image: url('../img/background-photo.jpg');
+  background-position: top center;
+ /* url('../img/white.svg') width="1200" height="57" alt="" */
+}
 
 .intro {
   color: var(--basic-black);
