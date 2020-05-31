@@ -15,7 +15,7 @@
 
 body {
   min-width: 1200px;
-  margin: 0;
+  margin: 0 40px;
   padding: 0;
   font-family: 'PT Sans', Arial, sans-serif;
   font-size: 14px;
@@ -23,9 +23,7 @@ body {
   font-weight: 400;
   color: var(--basic-black);
   text-transform: uppercase;
-  background-color: var(--basic-gray);
-  background-position: top center;
-  background-repeat: no-repeat;
+  background-color: var(--basic-white);
   box-shadow: 0px 5px 15px rgba(0, 1, 1, 0.2);
 }
 
@@ -38,29 +36,51 @@ img {
   height: auto;
 }
 
-.header {
+.page {
+  height: 100%;
+}
+
+/* nav */
+
+.navigation {
   font-size: 14px;
   line-height: 26px;
+  font-weight: bold;
   color: var(--basic-black);
-  background-color: var(--basic-white);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
 }
 
 .nav-list {
   list-style: none;
+  display: flex;
 }
 
-.logo {
-  position: absolute;
-  width: 138px;
-  height: 70px;
-  text-align: center;
+.nav-list a {
+  color: var(--basic-black);
 }
+
+.nav-list a:hover {
+  color: var(--basic-blue);
+}
+
+.nav-list a:focus {
+  color: rgba(0, 0, 0, 0.3);
+}
+
 
 /* main */
+
 .intro-photo {
-  background-image: url('../img/background-photo.jpg');
-  background-position: top center;
- /* url('../img/white.svg') width="1200" height="57" alt="" */
+  width: 100%;
+  min-height: 510px;
+  background: url('../img/background-photo.jpg') no-repeat;
+  background-size: cover;
+  
+  /* слова чтот не получается отцентровать */
+  /* url('../img/white.svg') width="1200" height="57" alt="" */
 }
 
 .intro {
