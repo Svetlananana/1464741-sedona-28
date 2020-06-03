@@ -40,6 +40,13 @@ img {
   height: 100%;
 }
 
+.page-body {
+  min-height: 100%;
+  display: grid;
+  grid-template-rows: min-content 1fr min-content;
+  align-content: start;
+}
+
 /* nav */
 
 .navigation {
@@ -47,15 +54,37 @@ img {
   line-height: 26px;
   font-weight: bold;
   color: var(--basic-black);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  
+  min-height: 56px;
+  width: 1200px;
+}
+
+.logo {
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  width: 138px;
+  height: 71px;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .nav-list {
   list-style: none;
   display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 100%;
+  margin: 0 0%;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.nav-list li:first-child {
+  padding-left: 55px;
+}
+
+.nav-list li:nth-child(2) {
+  padding-right: 20%;
 }
 
 .nav-list a {
@@ -70,7 +99,6 @@ img {
   color: rgba(0, 0, 0, 0.3);
 }
 
-
 /* main */
 
 .intro-photo {
@@ -78,84 +106,247 @@ img {
   min-height: 510px;
   background: url('../img/background-photo.jpg') no-repeat;
   background-size: cover;
-  
-  /* слова чтот не получается отцентровать */
-  /* url('../img/white.svg') width="1200" height="57" alt="" */
 }
+
+/* слова что т не получается отцентровать  буквы*/
+/* url('../img/white.svg') width="1200" height="57" alt="" */
 
 .intro {
   color: var(--basic-black);
   background-color: var(--basic-white);
+  display: flex;
+  flex-direction: column;
   font-size: 14px;
   line-height: 26px;
   text-align: center;
+  margin: 0;
 }
 
 .title {
   font-weight: bold;
   font-size: 21px;
   line-height: 26px;
+  min-height: 80px;
   text-align: center;
+  padding: 0;
+  padding-top: 42px;
+  margin: 0;
 }
 
-/*.advantages {
-  чтот я не вразумлю зачем мне столько классов 
-}*/
+.intro p {
+  margin: 0;
+  padding: 0;
+  padding-top: 17px;
+  padding-bottom: 52px;
+}
+
+.advantages {
+  display: flex;
+  flex-wrap: wrap;
+}
 
 .advantages-item {
   color: var(--basic-white);
   background-color: var(--basic-blue);
+  flex-direction: column;
   text-align: center;
+  min-height: 256px;
+  min-width: 30%;
+  margin: 0;
 }
 
 .advantages-title {
   font-weight: bold;
   font-size: 21px;
   line-height: 21px;
+  padding-top: 47px;
+  margin: 0;
 }
 
-/*.advantages-number {
-   ? 
-}*/
+.advantages-number {
+  display: inline-block;
+  padding-top: 25px;
+  padding-bottom: 23px;
+}
+
+.advantages-item p {
+  margin: 0;
+}
 
 .advantages-image {
+  display: flex;
   background-color: var(--basic-gray);
+  min-width: 800px;
+  min-height: 256px;
+  margin: 0;
 }
 
 .features {
   color: var(--basic-black);
   background-color: var(--basic-white);
-  background-image: url('icon-1.svg'); /* аларм! куда всавлять 3 иконки */
+  display: flex;
+  justify-content: center;
+  align-items: center;
   text-align: center;
+  max-width: 100%;
+  height: 330px;
+  margin: 0;
+  padding: 0;
 }
 
-/*.features-item {
-} */
+.features-item {
+  margin: 0;
+  padding: 0;
+}
+
+.features-item-house {
+  background-image: url('../img/icon-1.svg');
+  background-repeat: no-repeat;
+  margin: 0;
+  padding: 0;
+  padding-top: 100px;
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
 .features-title {
   font-weight: bold;
   font-size: 21px;
   line-height: 21px;
+  margin: 0;
+  padding: 0;
 }
 
-/* не пойму, как в секции преимуществ под номерами 3, 4, 5 поменять цвет фона и шрифта? */
+.features-item-house .features-title {
+  font-weight: bold;
+  font-size: 21px;
+  line-height: 21px;
+  margin: 0;
+  padding-left: 5px;
+}
+
+.features-item-house p {
+  margin: 0;
+  padding: 0;
+  padding-right: 0px;
+}
+
+.features-item-food {
+  background-image: url('../img/icon-2.svg');
+  background-repeat: no-repeat;
+  margin: 0;
+  padding: 0;
+  padding-top: 100px;
+  padding-left: 0px;
+  padding-right: 10px;
+}
+.features-item-souvenir {
+  background-image: url('../img/icon3.svg');
+  background-repeat: no-repeat;
+  margin: 0;
+  padding: 0;
+  padding-top: 100px;
+  padding-left: 0px;
+  padding-right: 10px;
+}
+
+/* здесь полный швах, не понимаю, как их все уровнять в кучу */
+
+.advantages-item-background {
+  background-color: var(--special-gray);
+  display: flex;
+  max-width: 100%;
+  flex-direction: column;
+  text-align: center;
+  margin: 0;
+  padding-left: 96px;
+}
+
+.advantages-item-background p {
+  padding: 0;
+  margin: 0;
+  align-items: center;
+  padding-bottom: 54px;
+}
+/* как растянуть серый фон во всю? */
+
+.intersted {
+  text-align: center;
+  padding-top: 57px;
+}
+
+.intersted p {
+  padding-top: 10px;
+}
+
+.button {
+  display: inline-block;
+  color: var(--basic-white);
+  background-color: var(--basic-brown);
+  border: none;
+  font: inherit;
+  text-transform: uppercase;
+  text-align: center;
+  position: relative;
+} /* стили на кнопку не повлияли вообще */
+
+.hotel-search {
+  display: flex;
+  max-width: 568px;
+  justify-content: center;
+}
+
+.form-search {
+  position: absolute;
+  border: none;
+  background-color: var(--basic-white);
+  font-weight: bold;
+  max-width: 568px;
+  padding: 0;
+  margin: 0;
+  left: 315px;
+}
+/* footer */
 
 .footer {
   color: var(--basic-black);
   background: rgba(255, 255, 255, 0.9);
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  max-height: 120px;
 }
 
 .contact {
+  background: rgba(255, 255, 255, 0.9);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 117px;
+  padding-bottom: 36px;
+  padding-top: 18px;
+  margin: 0;
+}
+
+.contact a {
+  text-decoration: none;
   color: var(--basic-black);
-  text-decoration: underline;
   font-weight: bold;
   font-size: 21px;
   line-height: 26px;
-  text-align: left;
+  padding-top: 9px;
 }
 
-.social {
-  text-align: center;
-  /* нарисовать 2 квадрата! наложить иконки соц сетей на ссылки, пока незнаю как*/
+.social ul {
+  width: 46px;
+  height: 48px;
+  /* */
+}
+
+.social-network {
+  list-style: none;
+  background-color: var(--basic-blue);
+  width: 150px;
+  margin: 0 auto;
 }
 
 .social a:hover {
@@ -165,9 +356,17 @@ img {
   background-color: var(--special-dark-blue);
 }
 
+.website {
+  display: flex;
+  justify-content: center;
+  max-width: 197px;
+  margin: auto;
+}
+
 .website p {
   font-size: 14px;
   line-height: 26px;
+  padding-right: 8px;
 }
 
 .website a:hover {
