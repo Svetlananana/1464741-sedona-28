@@ -10,8 +10,8 @@
   --special-dark-blue: #5496bd;
   --special-brown: #604e43;
   --special-dark-brown: #503e33;
+  --special-background-gray: #f2f2f2;
   --special-gray: #eeeeee;
-
 }
 
 body {
@@ -51,10 +51,10 @@ img {
 .header {
   width: 1200px;
   margin: 0 auto;
-  box-shadow: 0px 5px 15px rgba(0, 1, 1, 0.2);
+  box-shadow: 0px -20px 15px rgba(0, 1, 1, 0.2);
 }
 
-/* nav */
+/* nav 0px 5px 15px rgba(0, 1, 1, 0.2); */
 
 .navigation {
   font-size: 14px;
@@ -67,6 +67,7 @@ img {
 
 .logo {
   position: absolute;
+  z-index: 1;
   margin: 0;
   padding: 0;
   width: 138px;
@@ -91,10 +92,6 @@ img {
   width: 240px;
 }
 
-.nav-list li:first-child {
-  padding-right: px; 
-}
-
 .nav-list li:nth-child(2) {
   margin-right: 220px;
 }
@@ -116,17 +113,30 @@ img {
 .main {
   width: 1200px;
   margin: 0 auto;
-  box-shadow: 0px 5px 15px rgba(0, 1, 1, 0.2);
+  box-shadow: 0px 20px 15px rgba(0, 1, 1, 0.2);
 }
 
 .intro-photo {
+  position: relative;
   width: 1200px;
   min-height: 510px;
-  background: url('../img/background-photo.jpg') no-repeat;
+  background: url('../img/background-photo.jpg') no-repeat 50% 50%;
 }
 
-/* лого с буквами что т не получается отцентровать*/
-/* url('../img/white.svg') width="1200" height="57" alt="" */
+.intro-photo img:first-child {
+  position: absolute;
+  margin: 0;
+  padding: 77px 370px;
+}
+
+.intro-photo::after {
+  content: url('../img/white.svg');
+  background-repeat: no-repeat;
+  position: absolute;
+  width: 1200px;
+  height: 57px;
+  margin-top: 454px;
+}
 
 .intro {
   color: var(--basic-black);
@@ -145,9 +155,9 @@ img {
   line-height: 26px;
   min-height: 80px;
   text-align: center;
-  padding: 0;
-  padding-top: 42px;
   margin: 0;
+  margin-top: 43px;
+  padding: 0;
 }
 
 .intro p {
@@ -183,6 +193,7 @@ img {
 
 .advantages-number {
   display: inline-block;
+  vertical-align: inherit;
   padding-top: 25px;
   padding-bottom: 23px;
 }
@@ -213,18 +224,13 @@ img {
 }
 
 .features-item {
-  margin: 0;
-  padding: 0;
+  margin: 0 auto;
 }
 
-.features-item-house {
+.features-item:first-child {
   background-image: url('../img/icon-1.svg');
   background-repeat: no-repeat;
-  margin: 0;
-  padding: 0;
-  padding-top: 100px;
-  padding-left: 0px;
-  padding-right: 0px;
+  background-position: 50% 60px;
 }
 
 .features-title {
@@ -233,43 +239,27 @@ img {
   line-height: 21px;
   margin: 0;
   padding: 0;
+  padding-top: 160px;
+  padding-bottom: 25px;
 }
 
-.features-item-house .features-title {
-  font-weight: bold;
-  font-size: 21px;
-  line-height: 21px;
+.features-item p {
   margin: 0;
-  padding-left: 5px;
+  padding-bottom: 82px;
 }
 
-.features-item-house p {
-  margin: 0;
-  padding: 0;
-  padding-right: 0px;
-}
-
-.features-item-food {
+.features-item:nth-child(2) {
   background-image: url('../img/icon-2.svg');
   background-repeat: no-repeat;
-  margin: 0;
-  padding: 0;
-  padding-top: 100px;
-  padding-left: 0px;
-  padding-right: 10px;
+  background-position: 50% 60px;
 }
-.features-item-souvenir {
+.features-item:last-child {
   background-image: url('../img/icon3.svg');
   background-repeat: no-repeat;
-  margin: 0;
-  padding: 0;
-  padding-top: 100px;
-  padding-left: 0px;
-  padding-right: 10px;
+  background-position: 50% 60px;
 }
 
-/* здесь полный швах, не понимаю, как их все уровнять в кучу */
-.advantages .advantages-item-background { 
+.advantages .advantages-item-background {
   background-color: var(--special-gray);
   text-align: center;
   max-height: 256px;
@@ -279,33 +269,10 @@ img {
 .advantages .advantages-item-background:first-child,
 .advantages .advantages-item-background:nth-child(2),
 .advantages .advantages-item-background:last-child {
-  max-height: 256px;
   width: 400px;
   margin: 0;
   padding: 0;
 }
-
-/*.advantages .advantages-item-background:first-child {
-  max-height: 256px;
-  width: 400px;
-  margin: 0;
-  padding: 0;
-}
-
-.advantages .advantages-item-background:nth-child(2) {
-  max-height: 256px;
-  width: 400px;
-  margin: 0;
-  padding: 0;
-}
-
-.advantages .advantages-item-background:last-child {
-  max-height: 256px;
-  width: 400px;
-  margin: 0;
-  padding: 0;
-}*/
-
 
 .advantages-item-background p {
   padding: 0;
@@ -313,65 +280,188 @@ img {
   align-items: center;
   padding-bottom: 54px;
 }
-/* как растянуть серый фон во всю? */
+
+/* Заинтересовались? */
 
 .intersted {
   text-align: center;
   padding-top: 57px;
 }
 
+.intersted-title {
+  font-size: 30px;
+  line-height: 24px;
+  margin: 0;
+}
+
 .intersted p {
-  padding-top: 10px;
+  padding-top: 30px;
+  padding-bottom: 35px;
+  font-size: 14px;
+  line-height: 24px;
+  margin: 0;
 }
 
 .button {
+  position: relative;
   display: inline-block;
+  vertical-align: baseline;
   color: var(--basic-white);
   background-color: var(--basic-brown);
+  width: 568px;
+  height: 86px;
   border: none;
-  font: inherit;
   text-transform: uppercase;
   text-align: center;
-  position: relative;
-} /* стили на кнопку не повлияли вообще */
+  font-size: 21px;
+  line-height: 26px;
+  font-weight: bold;
+  outline: none;
+}
+
+.button:hover {
+  outline: none;
+  background-color: var(--special-brown);
+}
+
+.button:active {
+  color: rgba(255, 255, 255, 0.3);
+  background-color: var(--special-dark-brown);
+}
+
+/* форма */
 
 .hotel-search {
   display: flex;
-  max-width: 568px;
-  justify-content: center;
+  position: absolute;
+  z-index: 1;
+  left: 50%;
+  transform: translateX(-50%);
+  box-shadow: 0px 7px 15px rgba(0, 1, 1, 0.15);
 }
 
 .form-search {
-  position: absolute;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
   border: none;
+
   background-color: var(--basic-white);
   font-weight: bold;
-  max-width: 568px;
+  font-size: 14px;
+  line-height: 26px;
+  width: 568px;
+  min-height: 395px;
   padding: 0;
   margin: 0;
-  left: 315px;
 }
-/* footer */
 
+.date-search {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  margin: 0;
+  padding-top: 55px;
+  padding-left: 55px;
+}
+
+.date-search label:first-child {
+  padding-bottom: 29px;
+  padding-right: 30px;
+}
+
+.date-search input {
+  border: none;
+  outline: none;
+  background-color: var(--special-background-gray);
+  font: inherit;
+  text-transform: uppercase;
+  font-weight: bold;
+  width: 346px;
+  height: 38px;
+  text-align: left;
+}
+
+.number-search {
+  display: flex;
+  justify-content: space-between;
+  margin: 0;
+  padding: 0 50px;
+  padding-top: 30px;
+}
+
+.number-search input {
+  margin: 0;
+  padding: 0;
+  border: none;
+  background-color: var(--special-background-gray);
+  outline: none;
+
+  font: inherit;
+  text-transform: uppercase;
+  font-weight: bold;
+  width: 114px;
+  height: 38px;
+  text-align: center;
+}
+.form-search button {
+  position: absolute;
+  display: inline-block;
+  vertical-align: baseline;
+  color: var(--basic-white);
+  background-color: var(--basic-blue);
+  width: 458px;
+  height: 58px;
+  border: none;
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 21px;
+  line-height: 26px;
+  font-weight: bold;
+  outline: none;
+
+  left: 55px;
+  bottom: 55px;
+}
+
+.form-search button:hover {
+  background-color: var(--special-blue);
+}
+
+.form-search button:active {
+  color: rgba(255, 255, 255, 0.3);
+  background-color: var(--special-dark-blue);
+}
+
+/* footer */
 .footer {
-  color: var(--basic-black);
-  background: rgba(255, 255, 255, 0.9);
+  position: relative;
+  margin: 0;
+}
+
+.footer-container {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+  bottom: 0;
+
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  max-height: 120px;
+
+  color: var(--basic-black);
+  background: rgba(255, 255, 255, 0.9);
   width: 1200px;
-  margin: 0 auto;
+  height: 120px;
 }
 
 .contact {
-  background: rgba(255, 255, 255, 0.9);
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  padding: 0;
+  padding-top: 23px;
   padding-left: 117px;
-  padding-bottom: 36px;
-  padding-top: 18px;
-  margin: 0;
 }
 
 .contact a {
@@ -379,22 +469,24 @@ img {
   color: var(--basic-black);
   font-weight: bold;
   font-size: 21px;
-  line-height: 26px;
-  padding-top: 9px;
+  line-height: 35px;
 }
 
 .social ul {
-  width: 46px;
-  height: 48px;
-  /* */
+  list-style: none;
+  display: flex;
+  justify-content: center;
 }
 
-.social-network {
-  list-style: none;
+.social-network a {
+  text-decoration: none;
   background-color: var(--basic-blue);
-  width: 150px;
-  margin: 0 auto;
 }
+.social-tw {
+  width: 46px;
+  height: 46px;
+}
+/* не понимаю, как ссылки на соц сети сделать большими квадратами*/
 
 .social a:hover {
   background-color: var(--special-blue);
@@ -406,33 +498,38 @@ img {
 .website {
   display: flex;
   justify-content: center;
-  max-width: 197px;
-  margin: auto;
+  padding-top: 38px;
 }
 
 .website p {
-  font-size: 14px;
-  line-height: 26px;
   padding-right: 8px;
 }
 
 .website a:hover {
-  background-color: var(--basic-blue);
+  color: var(--basic-blue);
 }
 
-.website a:focus {
+.website a img:focus {
   color: rgba(0, 0, 0, 0.3);
 }
+
+/* как сделать, что бы логотип html academy менял цвет при наведении и нажатии? */
 
 /* hotels */
 
 .checkbox-background {
   background-color: var(--basic-gray);
-  background-image: url('background-hotel.png');
+  background-image: url('../img/background-hotel.png');
+  background-repeat: no-repeat;
+  margin: 0 auto;
+  box-shadow: 0px 5px 15px rgba(0, 1, 1, 0.2);
+  width: 1200px;
+  min-height: 217px;
 }
 
 .checkbox-comfort {
   list-style: none;
+  border: none;
   color: var(--basic-white);
   font-size: 14px;
   line-height: 21px;
