@@ -41,6 +41,13 @@ img {
   height: 100%;
 }
 
+.box-shadow {
+  box-shadow: 0px 5px 15px rgba(0, 1, 1, 0.2);
+  width: 1200px;
+  height: auto;
+  margin: 0 auto;
+}
+
 .page-body {
   min-height: 100%;
   display: grid;
@@ -51,7 +58,6 @@ img {
 .header {
   width: 1200px;
   margin: 0 auto;
-  box-shadow: 0px -20px 15px rgba(0, 1, 1, 0.2);
 }
 
 /* nav 0px 5px 15px rgba(0, 1, 1, 0.2); */
@@ -82,7 +88,7 @@ img {
   justify-content: space-between;
   width: 1200px;
   height: 100%;
-  margin: 0 72px;
+  margin: 0 84px;
   padding: 0;
   padding-top: 15px;
   padding-bottom: 15px;
@@ -93,7 +99,7 @@ img {
 }
 
 .nav-list li:nth-child(2) {
-  margin-right: 220px;
+  margin-right: 260px;
 }
 
 .nav-list a {
@@ -105,6 +111,10 @@ img {
 }
 
 .nav-list a:focus {
+  color: var(--basic-brown);
+}
+
+.nav-list a:active {
   color: rgba(0, 0, 0, 0.3);
 }
 
@@ -113,7 +123,6 @@ img {
 .main {
   width: 1200px;
   margin: 0 auto;
-  box-shadow: 0px 20px 15px rgba(0, 1, 1, 0.2);
 }
 
 .intro-photo {
@@ -317,6 +326,7 @@ img {
   line-height: 26px;
   font-weight: bold;
   outline: none;
+  cursor: pointer;
 }
 
 .button:hover {
@@ -381,6 +391,7 @@ img {
   width: 346px;
   height: 38px;
   text-align: left;
+  margin-left: 20px;
 }
 
 .number-search {
@@ -394,6 +405,7 @@ img {
 .number-search input {
   margin: 0;
   padding: 0;
+  margin-left: 45px;
   border: none;
   background-color: var(--special-background-gray);
   outline: none;
@@ -420,6 +432,7 @@ img {
   line-height: 26px;
   font-weight: bold;
   outline: none;
+  cursor: pointer;
 
   left: 55px;
   bottom: 55px;
@@ -505,12 +518,18 @@ img {
   padding-right: 8px;
 }
 
-.website a:hover {
-  color: var(--basic-blue);
+.html-logo {
+  width: 115px;
+  height: 41px;
+  background-image: url('/img/html-academy.svg'); /* возле изображения черная рамка, от куда она могла появиться*/
 }
 
-.website a img:focus {
-  color: rgba(0, 0, 0, 0.3);
+.website a:hover {
+  background-image: url('../img/logo-htmlacademy-blue.svg');
+}
+
+.website a:focus {
+  background-image: url('../img/logo-htmlacademy-gray.svg');
 }
 
 /* как сделать, что бы логотип html academy менял цвет при наведении и нажатии? */
@@ -521,14 +540,13 @@ img {
   background-color: var(--basic-gray);
   background-image: url('../img/background-hotel.png');
   background-repeat: no-repeat;
-  margin: 0 auto;
-  box-shadow: 0px 5px 15px rgba(0, 1, 1, 0.2);
+  margin: 0;
   width: 1200px;
   min-height: 217px;
+  display: flex;
 }
 
 .checkbox-comfort {
-  list-style: none;
   border: none;
   color: var(--basic-white);
   font-size: 14px;
@@ -542,18 +560,115 @@ img {
   line-height: 21px;
 }
 
-/* .parameters-cost
-.cost
-.number-cost
-.range-cost
-.button-cost
- здесь форма */
+.checkbox-infra,
+.checkbox-hotel,
+.parameters-cost {
+  padding-top: 26px;
+}
+
+.checkbox-comfort ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.checkbox-comfort li:not(:first-child) {
+  padding-top: 25px;
+}
+
+.checkbox-infra {
+  padding-left: 72px;
+}
+
+.checkbox-hotel {
+  padding-left: 110px;
+}
+
+.check {
+  padding-left: 35px;
+}
+
+.check-input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.check-box {
+  position: absolute;
+  width: 23px;
+  height: 23px;
+  background-image: url('../img/checkbox-on.svg');
+  margin-left: -38px;
+}
+
+.check-input:checked + .check-box {
+  background-image: url('/img/checkbox-check-on.svg');
+}
+
+.check-input:disabled + .check-box {
+  background-image: url('/img/checkbox-disabled.svg');
+}
+
+.check-input:checked:disabled + .check-box {
+  background-image: url('/img/checkbox-check-disabled.svg');
+}
+
+.parameters-cost {
+  position: relative;
+  padding-left: 293px;
+}
+
+.cost {
+  border: none;
+  color: var(--basic-white);
+  font-size: 14px;
+  line-height: 21px;
+}
+
+.cost-input {
+  outline: none;
+  border: none;
+  text-align: center;
+  font: inherit;
+  color: var(--basic-white);
+  text-transform: uppercase;
+  background-color: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+.number-cost {
+  display: flex;
+  justify-content: center;
+  border: 2px solid;
+  max-width: 224px;
+  margin-top: 10px;
+  padding-top: 6px;
+  padding-bottom: 8px;
+  padding-left: 52px;
+  padding-right: 36px;
+}
+
+.number-cost::before {
+  position: absolute;
+  content: url('/img/white-line.svg');
+  z-index: 1;
+  width: 2px;
+  height: 22px;
+  right: 170px;
+}
 
 .sorting-search {
+  display: flex;
+  justify-content: left;
+
   background-color: var(--basic-white);
   color: var(--basic-blac);
   font-size: 12px;
   line-height: 18px;
+  width: 1200px;
+
+  border-bottom: 2px solid var(--special-background-gray);
 }
 
 .sorting-title {
@@ -562,18 +677,59 @@ img {
   font-weight: bold;
   font-size: 21px;
   line-height: 26px;
+  padding-left: 85px;
+  margin-top: 29px;
+  margin-bottom: 31px;
 }
 
-.cursor {
+.sorting {
+  font-size: 12px;
+  line-height: 18px;
+  margin: 0;
+  padding: 0;
+  padding-top: 31px;
+  padding-left: 46px;
+}
+
+.sorting-search ul {
+  list-style: none;
+  display: flex;
+  padding: 0;
+  margin: 0;
+  padding-top: 31px;
+  padding-left: 40px;
+}
+.sorting-search li {
+  padding-right: 32px;
+}
+
+.sorting-search a {
+  color: rgba(0, 0, 0, 0.3);
+  border-bottom: 1px dotted var(--basic-blue);
+}
+.sorting-search a:hover {
+  color: var(--basic-blue);
+  border-bottom: 1px dotted var(--basic-blue);
+}
+.sorting-search a:focus {
+  color: var(--basic-blue);
+  border: none;
+}
+.sorting-search a:active {
+  color: var(--basic-black);
+}
+
+.cursor ul {
   list-style: none;
 }
 
 .hotels {
-  border-top: 1px var(--basic-light-grey);
-  border-bottom: 1px var(--basic-light-grey);
 }
 
-/*.hotels-item {} */
+.hotels-item {
+  display: flex;
+  border-bottom: 2px solid var(--special-background-gray);
+}
 
 .hotel-image {
   border-color: var(--basic-gray);
