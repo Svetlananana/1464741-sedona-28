@@ -602,15 +602,15 @@ img {
 }
 
 .check-input:checked + .check-box {
-  background-image: url('/img/checkbox-check-on.svg');
+  background-image: url('../img/checkbox-check-on.svg');
 }
 
 .check-input:disabled + .check-box {
-  background-image: url('/img/checkbox-disabled.svg');
+  background-image: url('../img/checkbox-disabled.svg');
 }
 
 .check-input:checked:disabled + .check-box {
-  background-image: url('/img/checkbox-check-disabled.svg');
+  background-image: url('../img/checkbox-check-disabled.svg');
 }
 
 .parameters-cost {
