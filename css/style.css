@@ -1,3 +1,9 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 :root {
   --basic-white: #ffffff;
   --basic-blue: #81b3d2;
@@ -12,6 +18,7 @@
   --special-dark-brown: #503e33;
   --special-background-gray: #f2f2f2;
   --special-gray: #eeeeee;
+  --special-gray-logohtml: #bdbbbc;
 }
 
 body {
@@ -25,7 +32,6 @@ body {
   color: var(--basic-black);
   text-transform: uppercase;
   background-color: var(--basic-white);
-  box-shadow: 0px 5px 15px rgba(0, 1, 1, 0.2);
 }
 
 a {
@@ -38,7 +44,7 @@ img {
 }
 
 .page {
-  height: 100%;
+  min-height: 100%;
 }
 
 .box-shadow {
@@ -60,9 +66,8 @@ img {
   margin: 0 auto;
 }
 
-/* nav 0px 5px 15px rgba(0, 1, 1, 0.2); */
-
 .navigation {
+  position: relative;
   font-size: 14px;
   line-height: 26px;
   font-weight: bold;
@@ -85,21 +90,35 @@ img {
 .nav-list {
   list-style: none;
   display: flex;
-  justify-content: space-between;
-  width: 1200px;
-  height: 100%;
-  margin: 0 84px;
+  flex-wrap: wrap;
+  margin: 0;
   padding: 0;
-  padding-top: 15px;
-  padding-bottom: 15px;
+}
+
+.nav-list ul {
+  margin: 0;
 }
 
 .nav-list li {
   width: 240px;
+  padding-top: 15px;
+  padding-bottom: 15px;
 }
 
+.nav-list li:first-child {
+  padding-left: 72px;
+}
 .nav-list li:nth-child(2) {
-  margin-right: 260px;
+  margin-right: 240px;
+}
+.nav-list li:nth-child(2),
+.nav-list li:nth-child(3) {
+  text-align: center;
+}
+
+.nav-list li:last-child {
+  padding-right: 72px;
+  text-align: right;
 }
 
 .nav-list a {
@@ -111,11 +130,11 @@ img {
 }
 
 .nav-list a:focus {
-  color: var(--basic-brown);
+  color: rgba(0, 0, 0, 0.3);
 }
 
-.nav-list a:active {
-  color: rgba(0, 0, 0, 0.3);
+.nav-list .nav-active {
+  color: var(--basic-brown);
 }
 
 /* main */
@@ -185,20 +204,28 @@ img {
 .advantages-item {
   color: var(--basic-white);
   background-color: var(--basic-blue);
-  flex-direction: column;
   text-align: center;
   min-height: 256px;
   width: 400px;
   margin: 0;
+  padding-top: 47px;
 }
 
 .advantages-title {
   font-weight: bold;
   font-size: 21px;
   line-height: 21px;
-  padding-top: 47px;
   margin: 0;
+  padding: 0;
+  padding-left: 139px;
+  padding-right: 139px;
 }
+
+.advantages-title:nth-child(2) {
+  padding: 0;
+  padding-left: 0px;
+  padding-right: 0px;
+} /* - №2 -  не получается для заголовка отменить общие отступы */
 
 .advantages-number {
   display: inline-block;
@@ -209,6 +236,8 @@ img {
 
 .advantages-item p {
   margin: 0;
+  padding-left: 51px;
+  padding-right: 51px;
 }
 
 .advantages-image {
@@ -216,6 +245,22 @@ img {
   background-color: var(--basic-gray);
   width: 800px;
   min-height: 256px;
+  margin: 0;
+}
+
+.advantages-item-background {
+  background-color: var(--special-gray);
+  text-align: center;
+  max-height: 256px;
+  width: 400px;
+  margin: 0;
+  padding: 0;
+  padding-top: 47px;
+  padding-bottom: 54px;
+}
+
+.advantages-item-background p {
+  padding: 0;
   margin: 0;
 }
 
@@ -234,6 +279,8 @@ img {
 
 .features-item {
   margin: 0 auto;
+  padding-top: 160px;
+  padding-bottom: 82px;
 }
 
 .features-item:first-child {
@@ -248,13 +295,11 @@ img {
   line-height: 21px;
   margin: 0;
   padding: 0;
-  padding-top: 160px;
   padding-bottom: 25px;
 }
 
 .features-item p {
   margin: 0;
-  padding-bottom: 82px;
 }
 
 .features-item:nth-child(2) {
@@ -266,28 +311,6 @@ img {
   background-image: url('../img/icon3.svg');
   background-repeat: no-repeat;
   background-position: 50% 60px;
-}
-
-.advantages .advantages-item-background {
-  background-color: var(--special-gray);
-  text-align: center;
-  max-height: 256px;
-  margin: 0;
-  padding: 0;
-}
-.advantages .advantages-item-background:first-child,
-.advantages .advantages-item-background:nth-child(2),
-.advantages .advantages-item-background:last-child {
-  width: 400px;
-  margin: 0;
-  padding: 0;
-}
-
-.advantages-item-background p {
-  padding: 0;
-  margin: 0;
-  align-items: center;
-  padding-bottom: 54px;
 }
 
 /* Заинтересовались? */
@@ -446,6 +469,11 @@ img {
   color: rgba(255, 255, 255, 0.3);
   background-color: var(--special-dark-blue);
 }
+.map {
+  background-image: url('../img/map.png');
+  width: 1200px;
+  height: 594px;
+}
 
 /* footer */
 .footer {
@@ -465,6 +493,16 @@ img {
 
   color: var(--basic-black);
   background: rgba(255, 255, 255, 0.9);
+  width: 1200px;
+  height: 120px;
+}
+
+.footer-hotels {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+
+  color: var(--basic-black);
+  background: var(--basic-white);
   width: 1200px;
   height: 120px;
 }
@@ -489,17 +527,29 @@ img {
   list-style: none;
   display: flex;
   justify-content: center;
+  margin: 36px 0;
 }
 
 .social-network a {
   text-decoration: none;
   background-color: var(--basic-blue);
-}
-.social-tw {
   width: 46px;
   height: 46px;
+  position: relative;
+  display: block;
 }
-/* не понимаю, как ссылки на соц сети сделать большими квадратами*/
+
+.social-network svg {
+  fill: var(--basic-white);
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.social-fb {
+  margin: 0 6px;
+}
 
 .social a:hover {
   background-color: var(--special-blue);
@@ -515,24 +565,17 @@ img {
 }
 
 .website p {
+  padding: 0;
   padding-right: 8px;
 }
 
-.html-logo {
-  width: 115px;
-  height: 41px;
-  background-image: url('/img/html-academy.svg'); /* возле изображения черная рамка, от куда она могла появиться*/
+.website a:hover * {
+  fill: var(--basic-blue);
 }
 
-.website a:hover {
-  background-image: url('../img/logo-htmlacademy-blue.svg');
+.website a:active * {
+  fill: var(--special-gray-logohtml);
 }
-
-.website a:focus {
-  background-image: url('../img/logo-htmlacademy-gray.svg');
-}
-
-/* как сделать, что бы логотип html academy менял цвет при наведении и нажатии? */
 
 /* hotels */
 
@@ -568,7 +611,8 @@ img {
 
 .checkbox-comfort ul {
   list-style: none;
-  padding-left: 0;
+  padding: 0;
+  padding-top: 3px;
 }
 
 .checkbox-comfort li:not(:first-child) {
@@ -576,21 +620,26 @@ img {
 }
 
 .checkbox-infra {
-  padding-left: 72px;
+  padding-left: 61px;
 }
 
 .checkbox-hotel {
-  padding-left: 110px;
+  padding-left: 100px;
 }
 
 .check {
   padding-left: 35px;
 }
 
-.check-input {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
 }
 
 .check-box {
@@ -655,7 +704,7 @@ img {
   z-index: 1;
   width: 2px;
   height: 22px;
-  right: 170px;
+  right: 122px;
 }
 
 .sorting-search {
@@ -667,6 +716,7 @@ img {
   font-size: 12px;
   line-height: 18px;
   width: 1200px;
+  padding-left: 73px;
 
   border-bottom: 2px solid var(--special-background-gray);
 }
@@ -677,7 +727,7 @@ img {
   font-weight: bold;
   font-size: 21px;
   line-height: 26px;
-  padding-left: 85px;
+
   margin-top: 29px;
   margin-bottom: 31px;
 }
@@ -719,26 +769,104 @@ img {
   color: var(--basic-black);
 }
 
+.sorting-search .hotel-active {
+  color: var(--basic-blue);
+  border: none;
+} /* если я жмякаю на другие критерии выбора, то этот пункт все равно остается голубым, это ошибка? */
+
 .cursor ul {
   list-style: none;
+  margin: 0;
 }
 
 .hotels {
+  width: 1200px;
 }
 
 .hotels-item {
   display: flex;
   border-bottom: 2px solid var(--special-background-gray);
 }
-
-.hotel-image {
-  border-color: var(--basic-gray);
-  padding: 30px;
+.hotels-item span {
+  display: inline-block;
 }
 
-/* .hotels-description {} */
+.hotel-image {
+  background-color: var(--basic-gray);
+  width: 135px;
+  height: 90px;
+  margin: 30px 29px 30px 73px;
+}
+.hotels-description a {
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 21px;
+  line-height: 26px;
+  color: var(--basic-black);
+}
 
-/* .hotels-rating {} */
+.hotels-description h2 {
+  margin: 0;
+  padding: 0;
+  padding-top: 25px;
+}
+
+.hotels-description {
+  display: flex;
+  flex-flow: column wrap;
+  margin: 0;
+  padding: 0;
+  height: 100px;
+  width: 250px;
+}
+
+.hotel-details-buttons {
+  display: flex;
+  flex-direction: column;
+}
+.hotel-reserv-buttons {
+  display: flex;
+  flex-direction: column;
+}
+
+.hotel-details-buttons a {
+  display: inline-block;
+  width: 110px;
+  min-height: 27px;
+  background-color: var(--basic-blue);
+  color: var(--basic-white);
+  text-transform: uppercase;
+  font-family: inherit;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 21px;
+  text-align: center;
+  padding-top: 3px;
+  margin-top: 15px;
+}
+.hotel-reserv-buttons a {
+  display: inline-block;
+  width: 142px;
+  min-height: 27px;
+  background-color: var(--basic-brown);
+  color: var(--basic-white);
+  text-transform: uppercase;
+  font-family: inherit;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 21px;
+  text-align: center;
+  padding-top: 3px;
+  margin-top: 15px;
+}
+
+.hotels-rating {
+  display: flex;
+  justify-content: flex-end;
+  margin-left: 200px;
+}
 /* span */
 
 /* я запуталась=((( */
