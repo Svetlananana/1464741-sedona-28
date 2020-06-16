@@ -781,14 +781,18 @@ img {
 
 .hotels {
   width: 1200px;
+  flex-wrap: wrap;
 }
 
 .hotels-item {
   display: flex;
+  flex-wrap: wrap;
   border-bottom: 2px solid var(--special-background-gray);
 }
 .hotels-item span {
   display: inline-block;
+  padding: 0;
+  margin: 0;
 }
 
 .hotel-image {
@@ -808,25 +812,25 @@ img {
 .hotels-description h2 {
   margin: 0;
   padding: 0;
-  padding-top: 25px;
+  padding-top: 23px;
+  min-width: 100%;
 }
 
 .hotels-description {
   display: flex;
-  flex-flow: column wrap;
-  margin: 0;
-  padding: 0;
-  height: 100px;
-  width: 250px;
+  flex-wrap: wrap;
 }
 
 .hotel-details-buttons {
   display: flex;
   flex-direction: column;
+  padding-bottom: 22px;
 }
+
 .hotel-reserv-buttons {
   display: flex;
   flex-direction: column;
+  padding-left: 6px;
 }
 
 .hotel-details-buttons a {
@@ -865,7 +869,6 @@ img {
 .hotels-rating {
   display: flex;
   justify-content: flex-end;
-  margin-left: 200px;
 }
 /* span */
 
