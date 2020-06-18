@@ -19,6 +19,7 @@
   --special-background-gray: #f2f2f2;
   --special-gray: #eeeeee;
   --special-gray-logohtml: #bdbbbc;
+  --special-hotel-rating: #666666;
 }
 
 body {
@@ -108,9 +109,11 @@ img {
 .nav-list li:first-child {
   padding-left: 72px;
 }
+
 .nav-list li:nth-child(2) {
   margin-right: 240px;
 }
+
 .nav-list li:nth-child(2),
 .nav-list li:nth-child(3) {
   text-align: center;
@@ -133,7 +136,7 @@ img {
   color: rgba(0, 0, 0, 0.3);
 }
 
-.nav-list .nav-active {
+.nav-active:visited {
   color: var(--basic-brown);
 }
 
@@ -313,7 +316,9 @@ img {
   background-position: 50% 60px;
 }
 
+
 /* Заинтересовались? */
+
 
 .intersted {
   text-align: center;
@@ -362,7 +367,9 @@ img {
   background-color: var(--special-dark-brown);
 }
 
+
 /* форма */
+
 
 .hotel-search {
   display: flex;
@@ -440,7 +447,8 @@ img {
   height: 38px;
   text-align: center;
 }
-.form-search button {
+
+.form-search .submit {
   position: absolute;
   display: inline-block;
   vertical-align: baseline;
@@ -461,21 +469,25 @@ img {
   bottom: 55px;
 }
 
-.form-search button:hover {
+.submit:hover {
   background-color: var(--special-blue);
 }
 
-.form-search button:active {
+.submit:active {
   color: rgba(255, 255, 255, 0.3);
   background-color: var(--special-dark-blue);
 }
+
 .map {
   background-image: url('../img/map.png');
   width: 1200px;
   height: 594px;
 }
 
+
 /* footer */
+
+
 .footer {
   position: relative;
   margin: 0;
@@ -554,6 +566,7 @@ img {
 .social a:hover {
   background-color: var(--special-blue);
 }
+
 .social a:focus {
   background-color: var(--special-dark-blue);
 }
@@ -577,7 +590,9 @@ img {
   fill: var(--special-gray-logohtml);
 }
 
+
 /* hotels */
+
 
 .checkbox-background {
   background-color: var(--basic-gray);
@@ -709,16 +724,20 @@ img {
 
 .sorting-search {
   display: flex;
-  justify-content: left;
+  position: relative;
 
   background-color: var(--basic-white);
   color: var(--basic-blac);
   font-size: 12px;
   line-height: 18px;
   width: 1200px;
-  padding-left: 73px;
 
   border-bottom: 2px solid var(--special-background-gray);
+}
+
+.sorting-section {
+  display: flex;
+  padding-left: 73px;
 }
 
 .sorting-title {
@@ -749,35 +768,59 @@ img {
   padding-top: 31px;
   padding-left: 40px;
 }
+
 .sorting-search li {
   padding-right: 32px;
 }
 
-.sorting-search a {
+.sorting-section a {
   color: rgba(0, 0, 0, 0.3);
   border-bottom: 1px dotted var(--basic-blue);
 }
-.sorting-search a:hover {
+.sorting-section a:hover {
   color: var(--basic-blue);
   border-bottom: 1px dotted var(--basic-blue);
 }
-.sorting-search a:focus {
-  color: var(--basic-blue);
-  border: none;
-}
-.sorting-search a:active {
+
+.sorting-section a:active {
   color: var(--basic-black);
+  border: none;
 }
 
-.sorting-search .hotel-active {
+.sorting-section .hotel-active {
   color: var(--basic-blue);
   border: none;
-} /* если я жмякаю на другие критерии выбора, то этот пункт все равно остается голубым, это ошибка? */
-
-.cursor ul {
-  list-style: none;
-  margin: 0;
 }
+/* если я жмякаю на другие критерии выбора, то этот пункт все равно остается голубым, это ошибка? */
+
+.cursor a {
+  position: absolute;
+  right: 73px;
+  bottom: 36px;
+}
+
+.cursor-up {
+  width: 11px;
+  height: 10px;
+  margin-right: 23px;
+}
+
+.cursor-down {
+  width: 11px;
+  height: 10px;
+}
+
+.cursor a:hover * {
+  fill: var(--basic-black);
+}
+
+.cursor a:active * {
+  fill: var(--basic-blue);
+}
+
+/* как правильно сделать кнопку активной? */
+
+/* выбор отелей */
 
 .hotels {
   width: 1200px;
@@ -789,6 +832,7 @@ img {
   flex-wrap: wrap;
   border-bottom: 2px solid var(--special-background-gray);
 }
+
 .hotels-item span {
   display: inline-block;
   padding: 0;
@@ -801,6 +845,7 @@ img {
   height: 90px;
   margin: 30px 29px 30px 73px;
 }
+
 .hotels-description a {
   text-decoration: none;
   font-weight: bold;
@@ -814,6 +859,14 @@ img {
   padding: 0;
   padding-top: 23px;
   min-width: 100%;
+}
+
+.hotel-name a:hover {
+  color: var(--basic-blue);
+}
+
+.hotel-name a:active {
+  color: rgba(0, 0, 0, 0.3);
 }
 
 .hotels-description {
@@ -849,6 +902,16 @@ img {
   padding-top: 3px;
   margin-top: 15px;
 }
+
+.hotel-details-buttons a:hover {
+  background-color: var(--special-blue);
+}
+
+.hotel-details-buttons a:active {
+  color: rgba(255, 255, 255, 0.3);
+  background-color: var(--special-dark-blue);
+}
+
 .hotel-reserv-buttons a {
   display: inline-block;
   width: 142px;
@@ -866,10 +929,26 @@ img {
   margin-top: 15px;
 }
 
-.hotels-rating {
-  display: flex;
-  justify-content: flex-end;
+.hotel-reserv-buttons a:hover {
+  background-color: var(--special-brown);
 }
-/* span */
 
-/* я запуталась=((( */
+.hotel-reserv-buttons a:active {
+  color: rgba(255, 255, 255, 0.3);
+  background-color: var(--special-dark-brown);
+}
+
+.hotels-rating img {
+  margin: 0px;
+  padding: 1px;
+}
+
+.hotels-rating span {
+  display: inline-block;
+  width: 110px;
+  height: 27px;
+  color: var(--special-hotel-rating);
+  background-color: var(--special-background-gray);
+  text-align: center;
+  padding-top: 3px;
+}
