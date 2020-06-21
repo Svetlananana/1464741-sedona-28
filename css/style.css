@@ -20,6 +20,9 @@
   --special-gray: #eeeeee;
   --special-gray-logohtml: #bdbbbc;
   --special-hotel-rating: #666666;
+  --special-cursor-gray: #cacaca;
+  --special-calendar-gray: #a9a9a9;
+  --special-data-gray: #ebebeb;
 }
 
 body {
@@ -32,7 +35,7 @@ body {
   font-weight: 400;
   color: var(--basic-black);
   text-transform: uppercase;
-  background-color: var(--basic-white);
+  background-color: var(--special-background-gray);
 }
 
 a {
@@ -65,6 +68,7 @@ img {
 .header {
   width: 1200px;
   margin: 0 auto;
+  background-color: var(--basic-white);
 }
 
 .navigation {
@@ -136,22 +140,24 @@ img {
   color: rgba(0, 0, 0, 0.3);
 }
 
-.nav-active:visited {
+.nav-list .nav-active {
   color: var(--basic-brown);
 }
 
 /* main */
 
 .main {
-  width: 1200px;
+  width: 1200px; /* нужно ли вообще писать ширину и маргин здесь? */
   margin: 0 auto;
+  background-color: var(--basic-white);
 }
 
 .intro-photo {
   position: relative;
   width: 1200px;
-  min-height: 510px;
+  min-height: 509px;
   background: url('../img/background-photo.jpg') no-repeat 50% 50%;
+  background-color: var(--basic-gray);
 }
 
 .intro-photo img:first-child {
@@ -164,6 +170,7 @@ img {
   content: url('../img/white.svg');
   background-repeat: no-repeat;
   position: absolute;
+
   width: 1200px;
   height: 57px;
   margin-top: 454px;
@@ -177,25 +184,28 @@ img {
   font-size: 14px;
   line-height: 26px;
   text-align: center;
+  width: 1200px;
+
   margin: 0;
+  padding-top: 43px;
+  padding-bottom: 51px;
 }
 
 .title {
   font-weight: bold;
   font-size: 21px;
   line-height: 26px;
-  min-height: 80px;
   text-align: center;
+
   margin: 0;
-  margin-top: 43px;
-  padding: 0;
+  padding-left: 360px;
+  padding-right: 360px;
+  padding-bottom: 51px;
 }
 
 .intro p {
   margin: 0;
   padding: 0;
-  padding-top: 17px;
-  padding-bottom: 52px;
 }
 
 .advantages {
@@ -208,7 +218,6 @@ img {
   color: var(--basic-white);
   background-color: var(--basic-blue);
   text-align: center;
-  min-height: 256px;
   width: 400px;
   margin: 0;
   padding-top: 47px;
@@ -224,11 +233,9 @@ img {
   padding-right: 139px;
 }
 
-.advantages-title:nth-child(2) {
+.advantages-item:nth-child(2) h2:nth-child(1) {
   padding: 0;
-  padding-left: 0px;
-  padding-right: 0px;
-} /* - №2 -  не получается для заголовка отменить общие отступы */
+}
 
 .advantages-number {
   display: inline-block;
@@ -254,7 +261,6 @@ img {
 .advantages-item-background {
   background-color: var(--special-gray);
   text-align: center;
-  max-height: 256px;
   width: 400px;
   margin: 0;
   padding: 0;
@@ -263,8 +269,11 @@ img {
 }
 
 .advantages-item-background p {
-  padding: 0;
+  padding: 0 60px;
   margin: 0;
+}
+.advantages-item-background:nth-child(3) p:nth-child(3) {
+  padding: 0 75px;
 }
 
 .features {
@@ -275,15 +284,14 @@ img {
   align-items: center;
   text-align: center;
   width: 1200px;
-  max-height: auto;
   margin: 0;
   padding: 0;
 }
 
 .features-item {
-  margin: 0 auto;
-  padding-top: 160px;
-  padding-bottom: 82px;
+  padding: 160px 65px 82px;
+  margin: 0;
+  width: 400px;
 }
 
 .features-item:first-child {
@@ -316,13 +324,12 @@ img {
   background-position: 50% 60px;
 }
 
-
 /* Заинтересовались? */
-
 
 .intersted {
   text-align: center;
   padding-top: 57px;
+  padding-bottom: 35px;
 }
 
 .intersted-title {
@@ -333,32 +340,36 @@ img {
 
 .intersted p {
   padding-top: 30px;
-  padding-bottom: 35px;
   font-size: 14px;
   line-height: 24px;
   margin: 0;
 }
 
-.button {
+/* форма */
+
+.form-hotel-index {
   position: relative;
+}
+
+.button {
   display: inline-block;
   vertical-align: baseline;
   color: var(--basic-white);
   background-color: var(--basic-brown);
   width: 568px;
-  height: 86px;
   border: none;
   text-transform: uppercase;
   text-align: center;
   font-size: 21px;
   line-height: 26px;
   font-weight: bold;
-  outline: none;
+  outline: none; /* если оставить обводку, то она некрасиво горит и после нажатия */
   cursor: pointer;
+  margin: 0 316px;
+  padding: 30px;
 }
 
 .button:hover {
-  outline: none;
   background-color: var(--special-brown);
 }
 
@@ -368,20 +379,21 @@ img {
 }
 
 
-/* форма */
-
-
 .hotel-search {
   display: flex;
   position: absolute;
   z-index: 1;
+
   left: 50%;
   transform: translateX(-50%);
   box-shadow: 0px 7px 15px rgba(0, 1, 1, 0.15);
+  background-color: var(--basic-white);
+  width: 568px;
+  padding: 55px;
+
 }
 
 .form-search {
-  position: relative;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
@@ -391,24 +403,24 @@ img {
   font-weight: bold;
   font-size: 14px;
   line-height: 26px;
-  width: 568px;
-  min-height: 395px;
   padding: 0;
   margin: 0;
 }
 
 .date-search {
+  position: relative;
   display: flex;
   flex-direction: column;
   padding: 0;
   margin: 0;
-  padding-top: 55px;
-  padding-left: 55px;
+  width: 100%;
 }
 
 .date-search label:first-child {
-  padding-bottom: 29px;
-  padding-right: 30px;
+  margin-bottom: 29px;
+}
+.date-search label:nth-child(2) {
+  margin-bottom: 30px;
 }
 
 .date-search input {
@@ -421,24 +433,65 @@ img {
   width: 346px;
   height: 38px;
   text-align: left;
+}
+
+.checkin-date {
+  padding-left: 13px;
   margin-left: 20px;
 }
 
+.label-checkin-date svg {
+  position: absolute;
+  fill: var(--special-calendar-gray);
+  left: 430px;
+  top: 8px;
+}
+
+.checkout-date {
+  padding-left: 12px;
+  margin-left: 16px;
+} 
+.label-checkout-date svg {
+  position: absolute;
+  fill: var(--special-calendar-gray);
+  left: 430px;
+  bottom: 38px;
+}
+
+.date-search input:hover {
+  background-color: var(--special-data-gray);
+}
+.date-search input:focus {
+  background-color: var(--basic-white);
+  border: 2px solid var(--basic-light-grey)
+}
+
+
+
+.date-search svg:hover {
+  fill: var(--basic-black);
+}
+.date-search svg:active {
+  fill: var(--basic-blue);
+}
+
+
+
 .number-search {
+  position: relative;
   display: flex;
   justify-content: space-between;
   margin: 0;
-  padding: 0 50px;
-  padding-top: 30px;
+  margin-bottom: 54px;
+  width: 100%;
 }
 
 .number-search input {
   margin: 0;
   padding: 0;
-  margin-left: 45px;
   border: none;
   background-color: var(--special-background-gray);
-  outline: none;
+  outline: none; /* и тут */
 
   font: inherit;
   text-transform: uppercase;
@@ -448,25 +501,65 @@ img {
   text-align: center;
 }
 
-.form-search .submit {
+.adult input {
+  margin-left: 36px;
+}
+.child input {
+  margin-left: 25px;
+}
+
+.number-search button {
   position: absolute;
-  display: inline-block;
-  vertical-align: baseline;
+  border: none;
+
+}
+
+
+.adult svg {
+  position: absolute;
+  fill: var(--special-calendar-gray);
+  left: 124px;
+  bottom: 17px;
+}
+.adult svg:nth-child(3) {
+  margin-left: 75px;
+  bottom: 13px;
+}
+.child svg {
+  position: absolute;
+  fill: var(--special-calendar-gray);
+  left: 355px;
+  bottom: 17px;
+}
+
+.child svg:nth-child(3) {
+  margin-left: 75px;
+  bottom: 13px;
+}
+
+.number-search svg:hover {
+  fill: var(--basic-black);
+}
+.number-search svg:active {
+  fill: var(--basic-blue);
+}
+
+.form-search .submit {
   color: var(--basic-white);
   background-color: var(--basic-blue);
-  width: 458px;
-  height: 58px;
+
   border: none;
   text-transform: uppercase;
   text-align: center;
   font-size: 21px;
   line-height: 26px;
   font-weight: bold;
-  outline: none;
+  outline: none; /* убрать?*/
   cursor: pointer;
 
-  left: 55px;
-  bottom: 55px;
+  width: 100%;
+  padding-top: 15px;
+  padding-bottom: 16px;
 }
 
 .submit:hover {
@@ -480,13 +573,12 @@ img {
 
 .map {
   background-image: url('../img/map.png');
+  background-color: var(--basic-gray);
   width: 1200px;
   height: 594px;
 }
 
-
 /* footer */
-
 
 .footer {
   position: relative;
@@ -506,7 +598,7 @@ img {
   color: var(--basic-black);
   background: rgba(255, 255, 255, 0.9);
   width: 1200px;
-  height: 120px;
+  min-height: 120px;
 }
 
 .footer-hotels {
@@ -516,7 +608,7 @@ img {
   color: var(--basic-black);
   background: var(--basic-white);
   width: 1200px;
-  height: 120px;
+  min-height: 120px;
 }
 
 .contact {
@@ -559,7 +651,7 @@ img {
   transform: translate(-50%, -50%);
 }
 
-.social-fb {
+.social-network li:nth-child(even) {
   margin: 0 6px;
 }
 
@@ -582,17 +674,19 @@ img {
   padding-right: 8px;
 }
 
-.website a:hover * {
+.website svg {
+  fill: var(--basic-black);
+}
+
+.website svg:hover {
   fill: var(--basic-blue);
 }
 
-.website a:active * {
+.website svg:active {
   fill: var(--special-gray-logohtml);
 }
 
-
 /* hotels */
-
 
 .checkbox-background {
   background-color: var(--basic-gray);
@@ -791,12 +885,14 @@ img {
   color: var(--basic-blue);
   border: none;
 }
-/* если я жмякаю на другие критерии выбора, то этот пункт все равно остается голубым, это ошибка? */
 
 .cursor a {
   position: absolute;
   right: 73px;
   bottom: 36px;
+}
+.cursor svg {
+  fill: var(--special-cursor-gray);
 }
 
 .cursor-up {
@@ -810,11 +906,15 @@ img {
   height: 10px;
 }
 
-.cursor a:hover * {
+.cursor svg:hover {
   fill: var(--basic-black);
 }
 
-.cursor a:active * {
+.cursor svg:active {
+  fill: var(--basic-blue);
+}
+
+.cursor-down svg {
   fill: var(--basic-blue);
 }
 
