@@ -556,7 +556,7 @@ img {
   font-size: 21px;
   line-height: 26px;
   font-weight: bold;
-  outline: none;            /* убрать?*/
+  outline: none; /* убрать?*/
   cursor: pointer;
 
   width: 100%;
