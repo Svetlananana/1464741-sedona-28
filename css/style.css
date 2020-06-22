@@ -23,6 +23,7 @@
   --special-cursor-gray: #cacaca;
   --special-calendar-gray: #a9a9a9;
   --special-data-gray: #ebebeb;
+  --special-toggle-gray: #ababab;
 }
 
 body {
@@ -378,7 +379,6 @@ img {
   background-color: var(--special-dark-brown);
 }
 
-
 .hotel-search {
   display: flex;
   position: absolute;
@@ -390,7 +390,6 @@ img {
   background-color: var(--basic-white);
   width: 568px;
   padding: 55px;
-
 }
 
 .form-search {
@@ -450,7 +449,7 @@ img {
 .checkout-date {
   padding-left: 12px;
   margin-left: 16px;
-} 
+}
 .label-checkout-date svg {
   position: absolute;
   fill: var(--special-calendar-gray);
@@ -463,10 +462,8 @@ img {
 }
 .date-search input:focus {
   background-color: var(--basic-white);
-  border: 2px solid var(--basic-light-grey)
+  border: 2px solid var(--basic-light-grey);
 }
-
-
 
 .date-search svg:hover {
   fill: var(--basic-black);
@@ -474,8 +471,6 @@ img {
 .date-search svg:active {
   fill: var(--basic-blue);
 }
-
-
 
 .number-search {
   position: relative;
@@ -511,9 +506,7 @@ img {
 .number-search button {
   position: absolute;
   border: none;
-
 }
-
 
 .adult svg {
   position: absolute;
@@ -632,6 +625,7 @@ img {
   display: flex;
   justify-content: center;
   margin: 36px 0;
+  padding: 0px;
 }
 
 .social-network a {
@@ -752,6 +746,8 @@ img {
 }
 
 .check-box {
+  /* обводку на таб не получается сделать */
+  cursor: pointer;
   position: absolute;
   width: 23px;
   height: 23px;
@@ -772,8 +768,11 @@ img {
 }
 
 .parameters-cost {
+  display: flex;
+  flex-wrap: wrap;
+  width: 400px;
   position: relative;
-  padding-left: 293px;
+  padding-left: 315px;
 }
 
 .cost {
@@ -781,6 +780,7 @@ img {
   color: var(--basic-white);
   font-size: 14px;
   line-height: 21px;
+  margin: 0;
 }
 
 .cost-input {
@@ -795,25 +795,90 @@ img {
   padding: 0;
 }
 
-.number-cost {
+.price-controls {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   border: 2px solid;
-  max-width: 224px;
-  margin-top: 10px;
+  width: 317px;
   padding-top: 6px;
   padding-bottom: 8px;
-  padding-left: 52px;
-  padding-right: 36px;
+  margin-top: 10px;
+  margin-bottom: 20px;
 }
 
-.number-cost::before {
+.price-controls::before {
   position: absolute;
   content: url('../img/white-line.svg');
   z-index: 1;
   width: 2px;
   height: 22px;
-  right: 122px;
+}
+
+.range-controls {
+  position: relative;
+  padding-left: 1px;
+  margin-bottom: 31px;
+}
+
+.range-controls .scale {
+  height: 2px;
+  width: 316px;
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.range-controls .bar {
+  width: 80%;
+  height: 2px;
+  background: var(--basic-white);
+}
+
+.range-controls .toggle {
+  position: absolute;
+  top: -9px;
+  left: 0px;
+  width: 19px;
+  height: 19px;
+  padding: 0;
+  border: 8px solid var(--basic-white);
+  background-color: var(--special-toggle-gray);
+  border-radius: 50%;
+  box-shadow: 0 2px 1px 0 rgba(255, 255, 255, 0.3);
+  cursor: pointer;
+}
+
+.range-controls .toggle-min {
+  left: 1px;
+}
+
+.range-controls .toggle-max {
+  left: 246px;
+}
+
+.toggle:hover {
+  width: 23px;
+  height: 23px;
+}
+
+.button-cost {
+  cursor: pointer;
+  border: 2px solid var(--basic-white);
+  color: var(--basic-white);
+  font-size: 14px;
+  line-height: 21px;
+  text-transform: uppercase;
+  background-color: transparent;
+
+  width: 137px;
+  min-height: 36px;
+
+  margin-left: 85px;
+}
+
+.button-cost:hover {
+  color: var(--basic-black);
+  border: none;
+  background-color: var(--basic-white);
 }
 
 .sorting-search {
@@ -891,6 +956,7 @@ img {
   right: 73px;
   bottom: 36px;
 }
+
 .cursor svg {
   fill: var(--special-cursor-gray);
 }
@@ -918,13 +984,12 @@ img {
   fill: var(--basic-blue);
 }
 
-/* как правильно сделать кнопку активной? */
-
 /* выбор отелей */
 
 .hotels {
   width: 1200px;
   flex-wrap: wrap;
+  background-color: var(--basic-white);
 }
 
 .hotels-item {
@@ -944,6 +1009,12 @@ img {
   width: 135px;
   height: 90px;
   margin: 30px 29px 30px 73px;
+}
+
+.hotels-description {
+  width: 450px;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .hotels-description a {
@@ -967,11 +1038,6 @@ img {
 
 .hotel-name a:active {
   color: rgba(0, 0, 0, 0.3);
-}
-
-.hotels-description {
-  display: flex;
-  flex-wrap: wrap;
 }
 
 .hotel-details-buttons {
@@ -1038,8 +1104,19 @@ img {
   background-color: var(--special-dark-brown);
 }
 
-.hotels-rating img {
-  margin: 0px;
+.hotels-rating {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-left: 333px;
+}
+
+.star-rating {
+  text-align: right;
+}
+
+.star-rating svg {
+  margin-top: 29px;
   padding: 1px;
 }
 
@@ -1051,4 +1128,5 @@ img {
   background-color: var(--special-background-gray);
   text-align: center;
   padding-top: 3px;
+  margin-bottom: 31px;
 }

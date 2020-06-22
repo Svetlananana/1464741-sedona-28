@@ -79,18 +79,29 @@
             </ul>
           </fieldset>
         </div>
+
         <div class="parameters-cost">
           <fieldset class="cost">
             <legend class="title-options">Стоимость в сутки (Р):</legend>
             <div class="number-cost">
-              <label><input class="cost-input" type="text" value="от 0" required></label>
-              <label><input class="cost-input" type="text" value="до 3000" required></label>
+              <div class="price-controls">
+                <label class="min-price"><input class="cost-input" type="text" value="от 0" required></label>
+                <label class="max-price"><input class="cost-input" type="text" value="до 3000" required></label>
+              </div>
+
+              <div class="range-controls">
+                <div class="scale">
+                  <div class="bar" style="width: 80%; margin-right: 20%"></div>
+                </div>
+                <div class="toggle toggle-min" tabindex="0" style="left: 0%"></div>
+                <div class="toggle toggle-max" tabindex="0" style="left: 78%"></div>
+              </div>
             </div>
-            <input class="range-cost" type="range" min="0" max="3000">
             <button class="button-cost" type="submit">Показать</button>
-          </fieldset>
         </div>
+        </fieldset>
       </form>
+
       <section class="sorting-search">
         <div class="sorting-section">
           <h3 class="sorting-title">Найдено: 3</h3>
@@ -111,7 +122,7 @@
 
             <li><a class="cursor-down" href="#">
                 <svg width="11" height="10" viewBox="0 0 11 10" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M5.5 10L11 0L0 0L5.5 10Z"  />
+                  <path d="M5.5 10L11 0L0 0L5.5 10Z" />
                 </svg>
               </a></li>
           </ul>
@@ -136,10 +147,28 @@
             </div>
           </div>
           <div class="hotels-rating">
-            <img src="img/star.svg" alt="рейтинг">
-            <img src="img/star.svg" alt="рейтинг">
-            <img src="img/star.svg" alt="рейтинг">
-            <img src="img/star.svg" alt="рейтинг">
+            <div class="star-rating">
+              <svg width="19" height="17" viewBox="0 0 19 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M9.002 0L11.128 6.494H18.005L12.441 10.506L14.566 17L9.002 12.987L3.438 17L5.564 10.506L0 6.494H6.878L9.002 0Z"
+                  fill="#81B3D2" />
+              </svg>
+              <svg width="19" height="17" viewBox="0 0 19 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M9.002 0L11.128 6.494H18.005L12.441 10.506L14.566 17L9.002 12.987L3.438 17L5.564 10.506L0 6.494H6.878L9.002 0Z"
+                  fill="#81B3D2" />
+              </svg>
+              <svg width="19" height="17" viewBox="0 0 19 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M9.002 0L11.128 6.494H18.005L12.441 10.506L14.566 17L9.002 12.987L3.438 17L5.564 10.506L0 6.494H6.878L9.002 0Z"
+                  fill="#81B3D2" />
+              </svg>
+              <svg width="19" height="17" viewBox="0 0 19 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M9.002 0L11.128 6.494H18.005L12.441 10.506L14.566 17L9.002 12.987L3.438 17L5.564 10.506L0 6.494H6.878L9.002 0Z"
+                  fill="#81B3D2" />
+              </svg>
+            </div>
             <span>Рейтинг 8,5</span>
           </div>
         </article>
@@ -159,9 +188,23 @@
             </div>
           </div>
           <div class="hotels-rating">
-            <img src="img/star.svg" alt="рейтинг">
-            <img src="img/star.svg" alt="рейтинг">
-            <img src="img/star.svg" alt="рейтинг">
+            <div class="star-rating">
+              <svg width="19" height="17" viewBox="0 0 19 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M9.002 0L11.128 6.494H18.005L12.441 10.506L14.566 17L9.002 12.987L3.438 17L5.564 10.506L0 6.494H6.878L9.002 0Z"
+                  fill="#81B3D2" />
+              </svg>
+              <svg width="19" height="17" viewBox="0 0 19 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M9.002 0L11.128 6.494H18.005L12.441 10.506L14.566 17L9.002 12.987L3.438 17L5.564 10.506L0 6.494H6.878L9.002 0Z"
+                  fill="#81B3D2" />
+              </svg>
+              <svg width="19" height="17" viewBox="0 0 19 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M9.002 0L11.128 6.494H18.005L12.441 10.506L14.566 17L9.002 12.987L3.438 17L5.564 10.506L0 6.494H6.878L9.002 0Z"
+                  fill="#81B3D2" />
+              </svg>
+            </div>
             <span>Рейтинг 8,9</span>
           </div>
         </article>
@@ -181,8 +224,18 @@
             </div>
           </div>
           <div class="hotels-rating">
-            <img src="img/star.svg" alt="рейтинг">
-            <img src="img/star.svg" alt="рейтинг">
+            <div class="star-rating">
+              <svg width="19" height="17" viewBox="0 0 19 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M9.002 0L11.128 6.494H18.005L12.441 10.506L14.566 17L9.002 12.987L3.438 17L5.564 10.506L0 6.494H6.878L9.002 0Z"
+                  fill="#81B3D2" />
+              </svg>
+              <svg width="19" height="17" viewBox="0 0 19 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M9.002 0L11.128 6.494H18.005L12.441 10.506L14.566 17L9.002 12.987L3.438 17L5.564 10.506L0 6.494H6.878L9.002 0Z"
+                  fill="#81B3D2" />
+              </svg>
+            </div>
             <span>Рейтинг 9,2</span>
           </div>
         </article>
@@ -217,8 +270,7 @@
               <a class="utb" href="#" alt="Youtube">
                 <svg width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path fill-rule="evenodd" clip-rule="evenodd"
-                    d="M3 0H17C18.65 0 20 1.35 20 3V13C20 14.65 18.65 16 17 16H3C1.35 16 0 14.65 0 13V3C0 1.35 1.35 0 3 0ZM6.027 4.002V11.998L15.014 8L6.027 4.002Z"
-                     />
+                    d="M3 0H17C18.65 0 20 1.35 20 3V13C20 14.65 18.65 16 17 16H3C1.35 16 0 14.65 0 13V3C0 1.35 1.35 0 3 0ZM6.027 4.002V11.998L15.014 8L6.027 4.002Z" />
                 </svg>
               </a>
             </li>
