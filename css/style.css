@@ -450,11 +450,20 @@ img {
   padding-left: 12px;
   margin-left: 16px;
 }
+
 .label-checkout-date svg {
   position: absolute;
   fill: var(--special-calendar-gray);
   left: 430px;
   bottom: 38px;
+}
+.button-calendar {
+  border: none;
+  width: 0;
+  height: 0;
+  background: none;
+  margin: 0;
+  padding: 0;
 }
 
 .date-search input:hover {
@@ -547,7 +556,7 @@ img {
   font-size: 21px;
   line-height: 26px;
   font-weight: bold;
-  outline: none; /* убрать?*/
+  outline: none;            /* убрать?*/
   cursor: pointer;
 
   width: 100%;
