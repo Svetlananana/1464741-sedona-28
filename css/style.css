@@ -364,7 +364,6 @@ img {
   font-size: 21px;
   line-height: 26px;
   font-weight: bold;
-  outline: none; /* если оставить обводку, то она некрасиво горит и после нажатия */
   cursor: pointer;
   margin: 0 316px;
   padding: 30px;
@@ -415,13 +414,6 @@ img {
   width: 100%;
 }
 
-.date-search label:first-child {
-  margin-bottom: 29px;
-}
-.date-search label:nth-child(2) {
-  margin-bottom: 30px;
-}
-
 .date-search input {
   border: none;
   outline: none;
@@ -437,27 +429,18 @@ img {
 .checkin-date {
   padding-left: 13px;
   margin-left: 20px;
-}
-
-.label-checkin-date svg {
-  position: absolute;
-  fill: var(--special-calendar-gray);
-  left: 430px;
-  top: 8px;
+  margin-bottom: 29px;
 }
 
 .checkout-date {
   padding-left: 12px;
   margin-left: 16px;
+  margin-bottom: 30px;
 }
 
-.label-checkout-date svg {
+.button-calendar-checkin,
+.button-calendar-checkout {
   position: absolute;
-  fill: var(--special-calendar-gray);
-  left: 430px;
-  bottom: 38px;
-}
-.button-calendar {
   border: none;
   width: 0;
   height: 0;
@@ -466,9 +449,24 @@ img {
   padding: 0;
 }
 
+.date-search svg {
+  fill: var(--special-calendar-gray);
+}
+
+.button-calendar-checkin {
+  left: 427px;
+  top: 8px;
+}
+
+.button-calendar-checkout {
+  left: 427px;
+  bottom: 61px;
+}
+
 .date-search input:hover {
   background-color: var(--special-data-gray);
 }
+
 .date-search input:focus {
   background-color: var(--basic-white);
   border: 2px solid var(--basic-light-grey);
@@ -477,6 +475,7 @@ img {
 .date-search svg:hover {
   fill: var(--basic-black);
 }
+
 .date-search svg:active {
   fill: var(--basic-blue);
 }
@@ -496,7 +495,6 @@ img {
   border: none;
   background-color: var(--special-background-gray);
   outline: none; /* и тут */
-
   font: inherit;
   text-transform: uppercase;
   font-weight: bold;
@@ -508,6 +506,7 @@ img {
 .adult input {
   margin-left: 36px;
 }
+
 .child input {
   margin-left: 25px;
 }
@@ -515,33 +514,42 @@ img {
 .number-search button {
   position: absolute;
   border: none;
+  width: 0;
+  height: 0;
+  background: none;
+  margin: 0;
+  padding: 0;
 }
 
-.adult svg {
-  position: absolute;
+.number-search svg,
+.number-search svg {
   fill: var(--special-calendar-gray);
+}
+
+.button-adult-minus {
   left: 124px;
-  bottom: 17px;
-}
-.adult svg:nth-child(3) {
-  margin-left: 75px;
-  bottom: 13px;
-}
-.child svg {
-  position: absolute;
-  fill: var(--special-calendar-gray);
-  left: 355px;
-  bottom: 17px;
+  bottom: 28px;
 }
 
-.child svg:nth-child(3) {
-  margin-left: 75px;
-  bottom: 13px;
+.button-adult-plus {
+  left: 200px;
+  bottom: 25px;
+}
+
+.button-child-minus {
+  right: 102px;
+  bottom: 28px;
+}
+
+.button-child-plus {
+  right: 23px;
+  bottom: 25px;
 }
 
 .number-search svg:hover {
   fill: var(--basic-black);
 }
+
 .number-search svg:active {
   fill: var(--basic-blue);
 }
@@ -556,7 +564,6 @@ img {
   font-size: 21px;
   line-height: 26px;
   font-weight: bold;
-  outline: none; /* убрать?*/
   cursor: pointer;
 
   width: 100%;
@@ -762,6 +769,13 @@ img {
   height: 23px;
   background-image: url('../img/checkbox-on.svg');
   margin-left: -38px;
+}
+
+.check-input:focus + .check-box {
+  outline: -webkit-focus-ring-color auto 1px;
+}
+.check-input:focus-visible + .check-box {
+  outline: none;
 }
 
 .check-input:checked + .check-box {
