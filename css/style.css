@@ -24,6 +24,8 @@
   --special-calendar-gray: #a9a9a9;
   --special-data-gray: #ebebeb;
   --special-toggle-gray: #ababab;
+
+  --special-outline: #1b66c7;
 }
 
 body {
@@ -152,7 +154,7 @@ img {
 /* main */
 
 .main {
-  width: 1200px; /* нужно ли вообще писать ширину и маргин здесь? */
+  width: 1200px;
   margin: 0 auto;
   background-color: var(--basic-white);
 }
@@ -308,7 +310,7 @@ img {
 }
 
 .features-item:first-child {
-  background-image: url('../img/icon-1.svg'); /*не заданы размеры иконок, это ок?*/
+  background-image: url('../img/icon-1.svg');
   background-repeat: no-repeat;
   background-position: 50% 60px;
 }
@@ -404,6 +406,13 @@ img {
   background-color: var(--basic-white);
   width: 568px;
   padding: 55px 55px;
+
+  animation: bounce 0.6s;
+}
+
+.hotel-none {
+  display: none;
+  animation: bounce 0.6s;
 }
 
 .form-search {
@@ -427,6 +436,10 @@ img {
   padding: 0;
   margin: 0;
   width: 100%;
+}
+
+.input-error {
+  animation: shake 0.6s;
 }
 
 .date-search input {
@@ -511,7 +524,7 @@ img {
   padding: 0;
   border: none;
   background-color: var(--special-background-gray);
-  outline: none; /* и тут */
+  outline: none;
   font: inherit;
   text-transform: uppercase;
   font-weight: bold;
@@ -655,6 +668,7 @@ img {
   font-size: 21px;
   line-height: 35px;
 }
+
 .hashtag {
   padding-left: 1px;
 }
@@ -707,6 +721,7 @@ img {
 .website p {
   margin-right: 8px;
 }
+
 .website a {
   padding-top: 2px;
 }
@@ -808,11 +823,7 @@ img {
 }
 
 .check-input:focus + .check-box {
-  outline: -webkit-focus-ring-color auto 1px;
-}
-
-.check-input:focus-visible + .check-box {
-  outline: none;
+  outline: var(--special-outline) solid 2px;
 }
 
 .check-input:checked + .check-box {
@@ -863,7 +874,6 @@ img {
   width: 317px;
   padding-top: 5px;
   padding-bottom: 6px;
-  /*padding-left: 3px;*/
   margin-top: 5px;
   margin-bottom: 20px;
 }
@@ -929,6 +939,7 @@ img {
 .toggle:hover {
   width: 23px;
   height: 23px;
+  border: 10px solid var(--basic-white);
 }
 
 .button-cost {
@@ -950,6 +961,10 @@ img {
   color: var(--basic-black);
   border: none;
   background-color: var(--basic-white);
+}
+
+.button-cost:focus {
+  outline: var(--special-outline) solid medium;
 }
 
 .sorting-search {
@@ -1008,6 +1023,7 @@ img {
   color: rgba(0, 0, 0, 0.3);
   border-bottom: 1px dotted var(--basic-blue);
 }
+
 .sorting-section a:hover {
   color: var(--basic-blue);
   border-bottom: 1px dotted var(--basic-blue);
@@ -1068,7 +1084,6 @@ img {
   display: flex;
   flex-wrap: wrap;
   border-bottom: 1px solid var(--special-background-gray);
-  /*margin-bottom: -2px;*/
   padding-bottom: 30px;
 }
 
@@ -1080,7 +1095,6 @@ img {
   padding: 0;
   margin-top: 30px;
   margin-left: 73px;
-  /*margin-bottom: 32px;*/
 }
 
 .hotels-description {
@@ -1130,7 +1144,6 @@ img {
   display: flex;
   flex-direction: column;
   padding-left: 6px;
-  /*padding-bottom: 25px;*/
 }
 
 .hotel-details-buttons a {
@@ -1147,11 +1160,14 @@ img {
   line-height: 21px;
   text-align: center;
   padding-top: 2px;
-  /*margin-top: 15px;*/
 }
 
 .hotel-details-buttons a:hover {
   background-color: var(--special-blue);
+}
+
+.hotel-details-buttons a:focus {
+  outline: var(--special-outline) solid 2px;
 }
 
 .hotel-details-buttons a:active {
@@ -1173,11 +1189,18 @@ img {
   line-height: 21px;
   text-align: center;
   padding-top: 3px;
-  /*margin-top: 19px;*/
 }
 
 .hotel-reserv-buttons a:hover {
   background-color: var(--special-brown);
+}
+
+.hotel-reserv-buttons a:focus {
+  outline: var(--special-outline) solid 2px;
+}
+
+.hotel-reserv-buttons a:focus-visible {
+  outline: none;
 }
 
 .hotel-reserv-buttons a:active {
@@ -1214,4 +1237,50 @@ img {
   text-align: center;
   padding-top: 3px;
   padding-left: 3px;
+}
+
+@keyframes bounce {
+  from {
+    top: 100px;
+    animation-timing-function: ease-out;
+    opacity: 0;
+  }
+  25% {
+    top: 50px;
+    animation-timing-function: ease-in;
+    opacity: 0.5;
+  }
+  50% {
+    top: 100px;
+    animation-timing-function: ease-out;
+    opacity: 0.8;
+  }
+  75% {
+    top: 75px;
+    animation-timing-function: ease-in;
+    opacity: 1;
+  }
+  to {
+    top: 100px;
+  }
+}
+
+@keyframes shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    transform: translateX(-5px);
+  }
+  20%,
+  40%,
+  60%,
+  80% {
+    transform: translateX(5px);
+  }
 }
